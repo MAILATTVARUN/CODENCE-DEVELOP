@@ -37,6 +37,18 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .header-content {
@@ -51,6 +63,18 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .logo-icon {
@@ -66,6 +90,11 @@
             font-weight: bold;
             border: 2px solid #fff;
             flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+
+        .logo-icon:hover {
+            transform: rotate(15deg) scale(1.1);
         }
 
         .logo h1 {
@@ -87,13 +116,30 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 15px;
-            transition: color 0.3s;
+            transition: all 0.3s;
             padding: 8px 0;
             white-space: nowrap;
+            position: relative;
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: width 0.3s;
         }
 
         nav a:hover {
             color: #fff;
+            transform: translateY(-2px);
+        }
+
+        nav a:hover:after {
+            width: 100%;
         }
 
         /* Hero Section */
@@ -101,6 +147,18 @@
             text-align: center;
             padding: 80px 20px 60px;
             background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero h2 {
@@ -109,6 +167,7 @@
             margin-bottom: 20px;
             font-weight: 800;
             line-height: 1.2;
+            animation: fadeInUp 1.2s ease-out;
         }
 
         .hero p {
@@ -117,6 +176,7 @@
             max-width: 800px;
             margin: 0 auto 30px;
             line-height: 1.7;
+            animation: fadeInUp 1.4s ease-out;
         }
 
         .cta-button {
@@ -130,12 +190,13 @@
             border-radius: 6px;
             transition: all 0.3s;
             margin-top: 10px;
+            animation: fadeInUp 1.6s ease-out;
         }
 
         .cta-button:hover {
             background: #e0e0e0;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
         }
 
         /* Section Styles */
@@ -165,15 +226,32 @@
             padding: 28px;
             border-radius: 12px;
             border: 2px solid #444;
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
+            opacity: 0;
+            animation: slideInCard 0.6s ease-out forwards;
         }
 
+        @keyframes slideInCard {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .division-card:nth-child(1) { animation-delay: 0.1s; }
+        .division-card:nth-child(2) { animation-delay: 0.2s; }
+        .division-card:nth-child(3) { animation-delay: 0.3s; }
+
         .division-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px) scale(1.02);
             border-color: #666;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
         }
 
         .division-card h3 {
@@ -203,6 +281,12 @@
             position: relative;
             font-size: 14px;
             line-height: 1.5;
+            transition: all 0.3s;
+        }
+
+        .division-card li:hover {
+            color: #fff;
+            padding-left: 28px;
         }
 
         .division-card li:before {
@@ -210,6 +294,11 @@
             position: absolute;
             left: 0;
             font-size: 14px;
+            transition: transform 0.3s;
+        }
+
+        .division-card li:hover:before {
+            transform: scale(1.3);
         }
 
         /* Projects Section */
@@ -228,15 +317,21 @@
             padding: 28px;
             border-radius: 12px;
             border: 2px solid #444;
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
+            opacity: 0;
+            animation: slideInCard 0.6s ease-out forwards;
         }
 
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+
         .project-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px) scale(1.02);
             border-color: #666;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
         }
 
         .project-card h3 {
@@ -270,6 +365,7 @@
         .project-link:hover {
             background: #555;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
         }
 
         /* Mission & Vision */
@@ -285,6 +381,14 @@
             padding: 28px;
             border-radius: 12px;
             border-left: 4px solid #fff;
+            opacity: 0;
+            animation: slideInCard 0.6s ease-out forwards;
+            transition: all 0.3s;
+        }
+
+        .mv-card:hover {
+            transform: translateX(10px);
+            box-shadow: -5px 0 20px rgba(255, 255, 255, 0.1);
         }
 
         .mv-card h3 {
@@ -312,11 +416,22 @@
             color: #b0b0b0;
             font-size: 15px;
             line-height: 1.6;
+            transition: all 0.3s;
+        }
+
+        .mv-card li:hover {
+            color: #fff;
+            padding-left: 30px;
         }
 
         .mv-card li span {
             position: absolute;
             left: 0;
+            transition: transform 0.3s;
+        }
+
+        .mv-card li:hover span {
+            transform: scale(1.3);
         }
 
         /* About Section */
@@ -325,41 +440,25 @@
         }
 
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 35px;
-            align-items: start;
-            max-width: 900px;
+            max-width: 700px;
             margin: 0 auto;
-        }
-
-        .about-image-wrapper {
-            display: flex;
-            justify-content: center;
-        }
-
-        .about-image {
-            width: 100%;
-            max-width: 250px;
-            height: auto;
-            aspect-ratio: 1;
-            border-radius: 12px;
-            border: 3px solid #444;
-            object-fit: cover;
+            text-align: center;
         }
 
         .about-text h3 {
             color: #fff;
             font-size: clamp(24px, 3vw, 28px);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             line-height: 1.3;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .about-text p {
             color: #b0b0b0;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             line-height: 1.8;
             font-size: 15px;
+            animation: fadeInUp 1s ease-out;
         }
 
         .social-link {
@@ -373,12 +472,101 @@
             font-weight: 600;
             font-size: 15px;
             transition: all 0.3s;
+            animation: fadeInUp 1.2s ease-out;
         }
 
         .social-link:hover {
             background: #006399;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 119, 181, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 119, 181, 0.4);
+        }
+
+        /* Blog Section */
+        .blog {
+            background: #1a1a1a;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .blog-card {
+            background: #2d2d2d;
+            border-radius: 12px;
+            border: 2px solid #444;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            animation: slideInCard 0.6s ease-out forwards;
+        }
+
+        .blog-card:nth-child(1) { animation-delay: 0.1s; }
+        .blog-card:nth-child(2) { animation-delay: 0.2s; }
+        .blog-card:nth-child(3) { animation-delay: 0.3s; }
+        .blog-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            border-color: #666;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #444 0%, #2d2d2d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover .blog-image {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: 24px;
+        }
+
+        .blog-date {
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .blog-card h3 {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .blog-card p {
+            color: #b0b0b0;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+
+        .read-more:hover {
+            gap: 10px;
+            color: #e0e0e0;
         }
 
         /* Contact Section */
@@ -393,9 +581,11 @@
             text-decoration: none;
             font-weight: 600;
             word-break: break-all;
+            transition: all 0.3s;
         }
 
         .contact-card a:hover {
+            color: #e0e0e0;
             text-decoration: underline;
         }
 
@@ -411,26 +601,18 @@
         footer a {
             color: #fff;
             text-decoration: none;
+            transition: color 0.3s;
         }
 
         footer a:hover {
+            color: #e0e0e0;
             text-decoration: underline;
         }
 
         /* Tablet Styles */
         @media (min-width: 768px) {
-            .about-content {
-                grid-template-columns: 250px 1fr;
-                gap: 40px;
-                align-items: center;
-            }
-
-            .about-image-wrapper {
-                justify-content: flex-start;
-            }
-
-            .about-text {
-                text-align: left;
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -479,7 +661,8 @@
 
             .divisions,
             .project-grid,
-            .mission-vision {
+            .mission-vision,
+            .blog-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
@@ -488,15 +671,6 @@
             .project-card,
             .mv-card {
                 padding: 24px;
-            }
-
-            .about-content {
-                gap: 30px;
-                text-align: center;
-            }
-
-            .about-text {
-                text-align: center;
             }
 
             .cta-button,
@@ -557,6 +731,7 @@
                     <a href="#home">Home</a>
                     <a href="#divisions">Divisions</a>
                     <a href="#projects">Projects</a>
+                    <a href="#blog">Blog</a>
                     <a href="#about">About</a>
                     <a href="#contact">Contact</a>
                 </nav>
@@ -626,7 +801,7 @@
                 <div class="project-card">
                     <h3>⭐ NEXO</h3>
                     <p>Real-Time Chatting App - A smooth, modern, real-time chat application designed for fast communication and clean UI.</p>
-                    <a href="https://talk-nexo-hub.lovable.app/chat" class="project-link" target="_blank">Launch NEXO</a>
+                    <a href="https://talk-nexo-hub.lovable.app/chat" class="project-link" target="_blank">Try NEXO</a>
                 </div>
 
                 <div class="project-card">
@@ -638,7 +813,54 @@
                 <div class="project-card">
                     <h3>📚 AI Student Life</h3>
                     <p>Smart study companion with study tools, reminders, and task management designed specifically for students.</p>
-                    <a href="https://aistudentlife.vercel.app/" class="project-link" target="_blank">Launch AI Student Life</a>
+                    <a href="https://aistudentlife.vercel.app/" class="project-link" target="_blank">Open AI Student Life</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="blog">
+        <div class="container">
+            <h2>Latest Tech Insights</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">🤖</div>
+                    <div class="blog-content">
+                        <div class="blog-date">November 20, 2025</div>
+                        <h3>AI Revolution in Web Development</h3>
+                        <p>Artificial Intelligence is transforming how we build applications. From code generation to automated testing, discover how AI tools are boosting developer productivity by 40%.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">⚡</div>
+                    <div class="blog-content">
+                        <div class="blog-date">November 18, 2025</div>
+                        <h3>The Rise of Real-Time Applications</h3>
+                        <p>Real-time communication apps are dominating the tech landscape. Learn about WebSockets, WebRTC, and modern frameworks powering instant messaging platforms.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">🎨</div>
+                    <div class="blog-content">
+                        <div class="blog-date">November 15, 2025</div>
+                        <h3>UI/UX Design Trends 2025</h3>
+                        <p>Minimalism meets functionality. Explore the latest design patterns including glassmorphism, micro-interactions, and AI-powered personalization that users love.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="blog-card">
+                    <div class="blog-image">🚀</div>
+                    <div class="blog-content">
+                        <div class="blog-date">November 12, 2025</div>
+                        <h3>Building Scalable Startup Infrastructure</h3>
+                        <p>From MVP to enterprise scale, learn the essential tech stack decisions that determine startup success. Cloud architecture, microservices, and DevOps best practices.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -679,7 +901,11 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Hello! I'm Varun</h3>
-                    <p>A young and passionate student innovator who loves creating intelligent digital products that help people in real life. I'm deeply interested in AI, app development, and building software that improves the daily life of students like me. I enjoy experimenting with new ideas, learning fast, and turning concepts into working applications. My mission is to develop simple, powerful tools that make studying smarter, more organized, and more enjoyable for every student. I believe great things can be built with focus, consistency, and creativity—and I'm working every day to prove it.</p>
+                    <p>A young and passionate student innovator who loves creating intelligent digital products that help people in real life.</p>
+                    <p>I'm deeply interested in AI, app development, and building software that improves the daily life of students like me.</p>
+                    <p>I enjoy experimenting with new ideas, learning fast, and turning concepts into working applications.</p>
+                    <p>My mission is to develop simple, powerful tools that make studying smarter, more organized, and more enjoyable for every student.</p>
+                    <p>I believe great things can be built with focus, consistency, and creativity—and I'm working every day to prove it.</p>
                     <a href="https://www.linkedin.com/in/varun-suresh-a25387382" class="social-link" target="_blank">Connect on LinkedIn</a>
                 </div>
             </div>
@@ -711,3 +937,4 @@
     </footer>
 </body>
 </html>
+                
