@@ -376,6 +376,13 @@
             margin-top: 40px;
         }
 
+        .why-codence-wrapper {
+            max-width: 700px;
+            margin: 30px auto 0;
+            display: flex;
+            justify-content: center;
+        }
+
         .mv-card {
             background: #2d2d2d;
             padding: 28px;
@@ -455,7 +462,6 @@
 
         .about-text p {
             color: #b0b0b0;
-            margin-bottom: 20px;
             line-height: 1.8;
             font-size: 15px;
             animation: fadeInUp 1s ease-out;
@@ -479,6 +485,94 @@
             background: #006399;
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0, 119, 181, 0.4);
+        }
+
+        /* Blog Section */
+        .blog {
+            background: #1a1a1a;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .blog-card {
+            background: #2d2d2d;
+            border-radius: 12px;
+            border: 2px solid #444;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            animation: slideInCard 0.6s ease-out forwards;
+        }
+
+        .blog-card:nth-child(1) { animation-delay: 0.1s; }
+        .blog-card:nth-child(2) { animation-delay: 0.2s; }
+        .blog-card:nth-child(3) { animation-delay: 0.3s; }
+        .blog-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            border-color: #666;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #444 0%, #2d2d2d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover .blog-image {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: 24px;
+        }
+
+        .blog-date {
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .blog-card h3 {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .blog-card p {
+            color: #b0b0b0;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+
+        .read-more:hover {
+            gap: 10px;
+            color: #e0e0e0;
         }
 
         /* Blog Section */
@@ -731,7 +825,6 @@
                     <a href="#home">Home</a>
                     <a href="#divisions">Divisions</a>
                     <a href="#projects">Projects</a>
-                    <a href="#blog">Blog</a>
                     <a href="#about">About</a>
                     <a href="#contact">Contact</a>
                 </nav>
@@ -819,53 +912,6 @@
         </div>
     </section>
 
-    <section id="blog" class="blog">
-        <div class="container">
-            <h2>Latest Tech Insights</h2>
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <div class="blog-image">🤖</div>
-                    <div class="blog-content">
-                        <div class="blog-date">November 20, 2025</div>
-                        <h3>AI Revolution in Web Development</h3>
-                        <p>Artificial Intelligence is transforming how we build applications. From code generation to automated testing, discover how AI tools are boosting developer productivity by 40%.</p>
-                        <a href="#" class="read-more">Read More →</a>
-                    </div>
-                </div>
-
-                <div class="blog-card">
-                    <div class="blog-image">⚡</div>
-                    <div class="blog-content">
-                        <div class="blog-date">November 18, 2025</div>
-                        <h3>The Rise of Real-Time Applications</h3>
-                        <p>Real-time communication apps are dominating the tech landscape. Learn about WebSockets, WebRTC, and modern frameworks powering instant messaging platforms.</p>
-                        <a href="#" class="read-more">Read More →</a>
-                    </div>
-                </div>
-
-                <div class="blog-card">
-                    <div class="blog-image">🎨</div>
-                    <div class="blog-content">
-                        <div class="blog-date">November 15, 2025</div>
-                        <h3>UI/UX Design Trends 2025</h3>
-                        <p>Minimalism meets functionality. Explore the latest design patterns including glassmorphism, micro-interactions, and AI-powered personalization that users love.</p>
-                        <a href="#" class="read-more">Read More →</a>
-                    </div>
-                </div>
-
-                <div class="blog-card">
-                    <div class="blog-image">🚀</div>
-                    <div class="blog-content">
-                        <div class="blog-date">November 12, 2025</div>
-                        <h3>Building Scalable Startup Infrastructure</h3>
-                        <p>From MVP to enterprise scale, learn the essential tech stack decisions that determine startup success. Cloud architecture, microservices, and DevOps best practices.</p>
-                        <a href="#" class="read-more">Read More →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="mission">
         <div class="container">
             <h2>Mission & Vision</h2>
@@ -881,16 +927,18 @@
                 </div>
             </div>
 
-            <div class="mv-card" style="margin-top: 30px;">
-                <h3>⚡ Why CODENCE?</h3>
-                <ul>
-                    <li><span>✓</span> High-performance, clean-coded applications</li>
-                    <li><span>✓</span> Modern black/grey design language</li>
-                    <li><span>✓</span> Multiple divisions working together</li>
-                    <li><span>✓</span> AI-powered development and automation</li>
-                    <li><span>✓</span> Perfect for startups, students, creators & businesses</li>
-                    <li><span>✓</span> Reliable, scalable, future-ready solutions</li>
-                </ul>
+            <div class="why-codence-wrapper">
+                <div class="mv-card">
+                    <h3>⚡ Why CODENCE?</h3>
+                    <ul>
+                        <li><span>✓</span> High-performance, clean-coded applications</li>
+                        <li><span>✓</span> Modern black/grey design language</li>
+                        <li><span>✓</span> Multiple divisions working together</li>
+                        <li><span>✓</span> AI-powered development and automation</li>
+                        <li><span>✓</span> Perfect for startups, students, creators & businesses</li>
+                        <li><span>✓</span> Reliable, scalable, future-ready solutions</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -901,11 +949,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Hello! I'm Varun</h3>
-                    <p>A young and passionate student innovator who loves creating intelligent digital products that help people in real life.</p>
-                    <p>I'm deeply interested in AI, app development, and building software that improves the daily life of students like me.</p>
-                    <p>I enjoy experimenting with new ideas, learning fast, and turning concepts into working applications.</p>
-                    <p>My mission is to develop simple, powerful tools that make studying smarter, more organized, and more enjoyable for every student.</p>
-                    <p>I believe great things can be built with focus, consistency, and creativity—and I'm working every day to prove it.</p>
+                    <p>A young and passionate student innovator who loves creating intelligent digital products that help people in real life. I'm deeply interested in AI, app development, and building software that improves the daily life of students like me. I enjoy experimenting with new ideas, learning fast, and turning concepts into working applications. My mission is to develop simple, powerful tools that make studying smarter, more organized, and more enjoyable for every student. I believe great things can be built with focus, consistency, and creativity—and I'm working every day to prove it.</p>
                     <a href="https://www.linkedin.com/in/varun-suresh-a25387382" class="social-link" target="_blank">Connect on LinkedIn</a>
                 </div>
             </div>
