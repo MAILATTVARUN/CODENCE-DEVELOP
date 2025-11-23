@@ -29,50 +29,6 @@
             padding: 0 20px;
         }
 
-        /* Confetti Animation */
-        .confetti {
-            position: fixed;
-            width: 10px;
-            height: 10px;
-            background: #fff;
-            position: absolute;
-            animation: confetti-fall 3s linear forwards;
-            pointer-events: none;
-            z-index: 9999;
-        }
-
-        @keyframes confetti-fall {
-            0% {
-                transform: translateY(-100vh) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh) rotate(720deg);
-                opacity: 0;
-            }
-        }
-
-        /* Sparkle Effect */
-        .sparkle {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            pointer-events: none;
-            z-index: 9999;
-            animation: sparkle-burst 0.8s ease-out forwards;
-        }
-
-        @keyframes sparkle-burst {
-            0% {
-                transform: scale(0) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(2) rotate(180deg);
-                opacity: 0;
-            }
-        }
-
         /* Header Styles */
         header {
             background: #000;
@@ -81,18 +37,6 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            animation: slideDown 0.5s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
         }
 
         .header-content {
@@ -107,31 +51,6 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            animation: fadeIn 0.8s ease-out;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .logo:active {
-            animation: bounce 0.5s ease;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: scale(1); }
-            25% { transform: scale(0.9) rotate(-5deg); }
-            50% { transform: scale(1.1) rotate(5deg); }
-            75% { transform: scale(0.95) rotate(-3deg); }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
         }
 
         .logo-icon {
@@ -147,17 +66,6 @@
             font-weight: bold;
             border: 2px solid #fff;
             flex-shrink: 0;
-            transition: transform 0.3s;
-        }
-
-        .logo:hover .logo-icon {
-            transform: rotate(360deg) scale(1.2);
-            animation: pulse 1s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
-            50% { box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
         }
 
         .logo h1 {
@@ -179,41 +87,12 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 15px;
-            transition: all 0.3s;
-            padding: 8px 15px;
+            padding: 8px 0;
             white-space: nowrap;
-            position: relative;
-            border-radius: 5px;
-        }
-
-        nav a:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: #fff;
-            transition: all 0.3s;
-            transform: translateX(-50%);
         }
 
         nav a:hover {
             color: #fff;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        nav a:hover:after {
-            width: 80%;
-        }
-
-        nav a:active {
-            animation: navClick 0.3s ease;
-        }
-
-        @keyframes navClick {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(0.9) rotate(5deg); }
         }
 
         /* Hero Section */
@@ -221,18 +100,6 @@
             text-align: center;
             padding: 80px 20px 60px;
             background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
-            animation: fadeInUp 1s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .hero h2 {
@@ -241,7 +108,6 @@
             margin-bottom: 20px;
             font-weight: 800;
             line-height: 1.2;
-            animation: fadeInUp 1.2s ease-out;
         }
 
         .hero p {
@@ -250,7 +116,6 @@
             max-width: 800px;
             margin: 0 auto 30px;
             line-height: 1.7;
-            animation: fadeInUp 1.4s ease-out;
         }
 
         .cta-button {
@@ -262,44 +127,11 @@
             font-weight: 700;
             font-size: 16px;
             border-radius: 6px;
-            transition: all 0.3s;
             margin-top: 10px;
-            animation: fadeInUp 1.6s ease-out;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.1);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .cta-button:hover:before {
-            width: 300px;
-            height: 300px;
         }
 
         .cta-button:hover {
             background: #e0e0e0;
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
-        }
-
-        .cta-button:active {
-            animation: buttonPop 0.3s ease;
-        }
-
-        @keyframes buttonPop {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(0.95); }
         }
 
         /* Section Styles */
@@ -329,63 +161,12 @@
             padding: 28px;
             border-radius: 12px;
             border: 2px solid #444;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
-            opacity: 0;
-            animation: slideInCard 0.6s ease-out forwards;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
         }
-
-        .division-card:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .division-card:hover:before {
-            width: 500px;
-            height: 500px;
-        }
-
-        @keyframes slideInCard {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .division-card:nth-child(1) { animation-delay: 0.1s; }
-        .division-card:nth-child(2) { animation-delay: 0.2s; }
-        .division-card:nth-child(3) { animation-delay: 0.3s; }
 
         .division-card:hover {
-            transform: translateY(-8px) scale(1.02) rotate(1deg);
             border-color: #666;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-        }
-
-        .division-card:active {
-            animation: cardWiggle 0.5s ease;
-        }
-
-        @keyframes cardWiggle {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-3deg) scale(0.98); }
-            75% { transform: rotate(3deg) scale(1.02); }
         }
 
         .division-card h3 {
@@ -393,8 +174,6 @@
             font-size: clamp(20px, 2.5vw, 24px);
             margin-bottom: 12px;
             line-height: 1.3;
-            position: relative;
-            z-index: 1;
         }
 
         .division-card p {
@@ -402,16 +181,12 @@
             margin-bottom: 15px;
             font-size: 15px;
             line-height: 1.6;
-            position: relative;
-            z-index: 1;
         }
 
         .division-card ul {
             list-style: none;
             padding-left: 0;
             margin-top: auto;
-            position: relative;
-            z-index: 1;
         }
 
         .division-card li {
@@ -421,13 +196,6 @@
             position: relative;
             font-size: 14px;
             line-height: 1.5;
-            transition: all 0.3s;
-        }
-
-        .division-card li:hover {
-            color: #fff;
-            padding-left: 28px;
-            transform: translateX(5px);
         }
 
         .division-card li:before {
@@ -435,11 +203,6 @@
             position: absolute;
             left: 0;
             font-size: 14px;
-            transition: transform 0.3s;
-        }
-
-        .division-card li:hover:before {
-            transform: scale(1.3) rotate(20deg);
         }
 
         /* Projects Section */
@@ -458,52 +221,12 @@
             padding: 28px;
             border-radius: 12px;
             border: 2px solid #444;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
-            opacity: 0;
-            animation: slideInCard 0.6s ease-out forwards;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
         }
-
-        .project-card:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .project-card:hover:before {
-            width: 500px;
-            height: 500px;
-        }
-
-        .project-card:nth-child(1) { animation-delay: 0.1s; }
-        .project-card:nth-child(2) { animation-delay: 0.2s; }
-        .project-card:nth-child(3) { animation-delay: 0.3s; }
 
         .project-card:hover {
-            transform: translateY(-8px) scale(1.02);
             border-color: #666;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-        }
-
-        .project-card:active {
-            animation: cardFlip 0.6s ease;
-        }
-
-        @keyframes cardFlip {
-            0% { transform: rotateY(0deg); }
-            50% { transform: rotateY(180deg); }
-            100% { transform: rotateY(360deg); }
         }
 
         .project-card h3 {
@@ -511,8 +234,6 @@
             font-size: clamp(20px, 2.5vw, 24px);
             margin-bottom: 12px;
             line-height: 1.3;
-            position: relative;
-            z-index: 1;
         }
 
         .project-card p {
@@ -521,8 +242,6 @@
             font-size: 15px;
             line-height: 1.6;
             flex-grow: 1;
-            position: relative;
-            z-index: 1;
         }
 
         .project-link {
@@ -532,27 +251,13 @@
             padding: 11px 24px;
             text-decoration: none;
             border-radius: 6px;
-            transition: all 0.3s;
             font-weight: 600;
             font-size: 15px;
             text-align: center;
-            position: relative;
-            z-index: 1;
         }
 
         .project-link:hover {
             background: #555;
-            transform: translateY(-2px) scale(1.05);
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
-        }
-
-        .project-link:active {
-            animation: linkBounce 0.3s ease;
-        }
-
-        @keyframes linkBounce {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(0.9); }
         }
 
         /* Mission & Vision */
@@ -566,54 +271,14 @@
             margin-right: auto;
         }
 
-        .why-codence-wrapper {
-            display: contents;
-        }
-
         .mv-card {
             background: #2d2d2d;
             padding: 28px;
             border-radius: 12px;
             border-left: 4px solid #fff;
-            opacity: 0;
-            animation: slideInCard 0.6s ease-out forwards;
-            transition: all 0.3s;
             min-height: 150px;
             display: flex;
             flex-direction: column;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mv-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.5s;
-        }
-
-        .mv-card:hover:before {
-            left: 100%;
-        }
-
-        .mv-card:hover {
-            transform: translateX(10px) scale(1.02);
-            box-shadow: -5px 0 20px rgba(255, 255, 255, 0.1);
-        }
-
-        .mv-card:active {
-            animation: cardShake 0.5s ease;
-        }
-
-        @keyframes cardShake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-10px) rotate(-2deg); }
-            75% { transform: translateX(10px) rotate(2deg); }
         }
 
         .mv-card h3 {
@@ -641,23 +306,11 @@
             color: #b0b0b0;
             font-size: 15px;
             line-height: 1.6;
-            transition: all 0.3s;
-        }
-
-        .mv-card li:hover {
-            color: #fff;
-            padding-left: 30px;
-            transform: translateX(5px);
         }
 
         .mv-card li span {
             position: absolute;
             left: 0;
-            transition: transform 0.3s;
-        }
-
-        .mv-card li:hover span {
-            transform: scale(1.5) rotate(360deg);
         }
 
         /* About Section */
@@ -676,14 +329,12 @@
             font-size: clamp(24px, 3vw, 28px);
             margin-bottom: 25px;
             line-height: 1.3;
-            animation: fadeInUp 0.8s ease-out;
         }
 
         .about-text p {
             color: #b0b0b0;
             line-height: 1.8;
             font-size: 15px;
-            animation: fadeInUp 1s ease-out;
         }
 
         .social-link {
@@ -696,43 +347,10 @@
             margin-top: 20px;
             font-weight: 600;
             font-size: 15px;
-            transition: all 0.3s;
-            animation: fadeInUp 1.2s ease-out;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social-link:before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .social-link:hover:before {
-            width: 300px;
-            height: 300px;
         }
 
         .social-link:hover {
             background: #006399;
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 119, 181, 0.4);
-        }
-
-        .social-link:active {
-            animation: socialPulse 0.4s ease;
-        }
-
-        @keyframes socialPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(0.9) rotate(5deg); }
         }
 
         /* Contact Section */
@@ -747,22 +365,10 @@
             text-decoration: none;
             font-weight: 600;
             word-break: break-all;
-            transition: all 0.3s;
-            display: inline-block;
         }
 
         .contact-card a:hover {
-            color: #e0e0e0;
-            transform: scale(1.05);
-        }
-
-        .contact-card a:active {
-            animation: emailJump 0.5s ease;
-        }
-
-        @keyframes emailJump {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            text-decoration: underline;
         }
 
         /* Footer */
@@ -777,22 +383,10 @@
         footer a {
             color: #fff;
             text-decoration: none;
-            transition: all 0.3s;
-            display: inline-block;
         }
 
         footer a:hover {
-            color: #e0e0e0;
-            transform: scale(1.1);
-        }
-
-        footer a:active {
-            animation: footerSpin 0.5s ease;
-        }
-
-        @keyframes footerSpin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            text-decoration: underline;
         }
 
         /* Tablet Styles */
@@ -908,16 +502,16 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo" onclick="createConfetti(event)">
+                <div class="logo">
                     <div class="logo-icon">⚡</div>
                     <h1>CODENCE</h1>
                 </div>
                 <nav>
-                    <a href="#home" onclick="createSparkle(event)">Home</a>
-                    <a href="#divisions" onclick="createSparkle(event)">Divisions</a>
-                    <a href="#projects" onclick="createSparkle(event)">Projects</a>
-                    <a href="#about" onclick="createSparkle(event)">About</a>
-                    <a href="#contact" onclick="createSparkle(event)">Contact</a>
+                    <a href="#home">Home</a>
+                    <a href="#divisions">Divisions</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
                 </nav>
             </div>
         </div>
@@ -927,7 +521,7 @@
         <div class="container">
             <h2>The Future-Building Group</h2>
             <p>CODENCE is a multi-division digital innovation group that empowers developers, creators, and entrepreneurs through world-class software, stunning design, and complete business-building services. We merge technology, creativity, and entrepreneurship into one ecosystem where ideas become reality.</p>
-            <a href="#contact" class="cta-button" onclick="createConfetti(event)">Get Started</a>
+            <a href="#contact" class="cta-button">Get Started</a>
         </div>
     </section>
 
@@ -935,7 +529,7 @@
         <div class="container">
             <h2>Our Sub-Startups</h2>
             <div class="divisions">
-                <div class="division-card" onclick="createConfetti(event)">
+                <div class="division-card">
                     <h3>🔵 CODENCE TECH</h3>
                     <p>Programming, AI & Engineering</p>
                     <p>CODENCE TECH is the powerhouse where all coding and engineering happens. We build high-performance applications using modern frameworks, clean architecture, and advanced AI.</p>
@@ -949,7 +543,7 @@
                     </ul>
                 </div>
 
-                <div class="division-card" onclick="createConfetti(event)">
+                <div class="division-card">
                     <h3>🎨 CODENCE STUDIO</h3>
                     <p>Design, Branding & UI/UX</p>
                     <p>Creating stunning visual experiences and brand identities that captivate and engage. From logos to complete design systems.</p>
@@ -962,7 +556,7 @@
                     </ul>
                 </div>
 
-                <div class="division-card" onclick="createConfetti(event)">
+                <div class="division-card">
                     <h3>🚀 CODENCE FOUNDERS</h3>
                     <p>Store Building, Tech Setup & Business Services</p>
                     <p>Complete business-building services to help entrepreneurs launch and scale their ventures with the right technology foundation.</p>
@@ -982,22 +576,22 @@
         <div class="container">
             <h2>Flagship Projects</h2>
             <div class="project-grid">
-                <div class="project-card" onclick="createSparkle(event)">
+                <div class="project-card">
                     <h3>⭐ NEXO</h3>
                     <p>Real-Time Chatting App - A smooth, modern, real-time chat application designed for fast communication and clean UI.</p>
-                    <a href="https://talk-nexo-hub.lovable.app/chat" class="project-link" target="_blank" onclick="event.stopPropagation(); createConfetti(event)">Launch NEXO</a>
+                    <a href="https://talk-nexo-hub.lovable.app/chat" class="project-link" target="_blank">Launch NEXO</a>
                 </div>
 
-                <div class="project-card" onclick="createSparkle(event)">
+                <div class="project-card">
                     <h3>🤖 AI Life OS</h3>
                     <p>Your complete life management system with reminders, notes, tasks, and more powered by AI.</p>
-                    <a href="https://mindstone-harmony-craftbyte.lovable.app/" class="project-link" target="_blank" onclick="event.stopPropagation(); createConfetti(event)">Launch AI Life OS</a>
+                    <a href="https://mindstone-harmony-craftbyte.lovable.app/" class="project-link" target="_blank">Launch AI Life OS</a>
                 </div>
 
-                <div class="project-card" onclick="createSparkle(event)">
+                <div class="project-card">
                     <h3>📚 AI Student Life</h3>
                     <p>Smart study companion with study tools, reminders, and task management designed specifically for students.</p>
-                    <a href="https://aistudentlife.vercel.app/" class="project-link" target="_blank" onclick="event.stopPropagation(); createConfetti(event)">Launch AI Student Life</a>
+                    <a href="https://aistudentlife.vercel.app/" class="project-link" target="_blank">Launch AI Student Life</a>
                 </div>
             </div>
         </div>
@@ -1007,17 +601,17 @@
         <div class="container">
             <h2>Mission & Vision</h2>
             <div class="mission-vision">
-                <div class="mv-card" onclick="createSparkle(event)">
+                <div class="mv-card">
                     <h3>🎯 Our Mission</h3>
                     <p>To build the most powerful ecosystem of apps, designs, and services that empower global creators and businesses.</p>
                 </div>
 
-                <div class="mv-card" onclick="createSparkle(event)">
+                <div class="mv-card">
                     <h3>🌟 Our Vision</h3>
                     <p>To become a world-leading tech & design group delivering innovation across development, branding, and business creation.</p>
                 </div>
 
-                <div class="mv-card" onclick="createConfetti(event)">
+                <div class="mv-card">
                     <h3>⚡ Why CODENCE?</h3>
                     <ul>
                         <li><span>✓</span> High-performance, clean-coded applications</li>
@@ -1039,7 +633,7 @@
                 <div class="about-text">
                     <h3>Hello! I'm Varun</h3>
                     <p>A young and passionate student innovator who loves creating intelligent digital products that help people in real life. I'm deeply interested in AI, app development, and building software that improves the daily life of students like me. I enjoy experimenting with new ideas, learning fast, and turning concepts into working applications. My mission is to develop simple, powerful tools that make studying smarter, more organized, and more enjoyable for every student. I believe great things can be built with focus, consistency, and creativity—and I'm working every day to prove it.</p>
-                    <a href="https://www.linkedin.com/in/varun-suresh-a25387382" class="social-link" target="_blank" onclick="createConfetti(event)">Connect on LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/varun-suresh-a25387382" class="social-link" target="_blank">Connect on LinkedIn</a>
                 </div>
             </div>
         </div>
@@ -1048,10 +642,10 @@
     <section id="contact">
         <div class="container">
             <h2>Contact Us</h2>
-            <div class="mv-card contact-card" onclick="createSparkle(event)">
+            <div class="mv-card contact-card">
                 <h3>📩 Get in Touch</h3>
                 <p style="font-size: 18px; margin-top: 20px;">
-                    Email: <a href="mailto:contactcodence@gmail.com" onclick="event.stopPropagation(); createConfetti(event)">contactcodence@gmail.com</a>
+                    Email: <a href="mailto:contactcodence@gmail.com">contactcodence@gmail.com</a>
                 </p>
                 <p style="margin-top: 20px; color: #b0b0b0;">
                     Let's build something amazing together!
@@ -1064,116 +658,9 @@
         <div class="container">
             <p>&copy; 2025 CODENCE - The Future-Building Group. All rights reserved.</p>
             <p style="margin-top: 10px;">
-                <a href="mailto:contactcodence@gmail.com" onclick="createConfetti(event)">contactcodence@gmail.com</a>
+                <a href="mailto:contactcodence@gmail.com">contactcodence@gmail.com</a>
             </p>
         </div>
     </footer>
-
-    <script>
-        // Confetti animation
-        function createConfetti(event) {
-            event.preventDefault();
-            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ffffff'];
-            const count = 50;
-            
-            for (let i = 0; i < count; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = event.clientX + 'px';
-                confetti.style.top = event.clientY + 'px';
-                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
-                confetti.style.animationDelay = Math.random() * 0.5 + 's';
-                confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
-                
-                const angle = Math.random() * Math.PI * 2;
-                const velocity = Math.random() * 5 + 5;
-                confetti.style.setProperty('--x', Math.cos(angle) * velocity + 'px');
-                confetti.style.setProperty('--y', Math.sin(angle) * velocity + 'px');
-                
-                document.body.appendChild(confetti);
-                
-                setTimeout(() => confetti.remove(), 3000);
-            }
-            
-            // If it's a link, follow it after animation
-            if (event.target.tagName === 'A' && event.target.href) {
-                setTimeout(() => {
-                    if (event.target.target === '_blank') {
-                        window.open(event.target.href, '_blank');
-                    } else {
-                        window.location.href = event.target.href;
-                    }
-                }, 300);
-            }
-        }
-
-        // Sparkle animation
-        function createSparkle(event) {
-            const sparkleCount = 12;
-            const colors = ['#ffffff', '#ffff00', '#00ffff', '#ff00ff'];
-            
-            for (let i = 0; i < sparkleCount; i++) {
-                const sparkle = document.createElement('div');
-                sparkle.className = 'sparkle';
-                sparkle.style.left = event.clientX + 'px';
-                sparkle.style.top = event.clientY + 'px';
-                
-                const angle = (Math.PI * 2 * i) / sparkleCount;
-                const distance = 50;
-                const x = Math.cos(angle) * distance;
-                const y = Math.sin(angle) * distance;
-                
-                sparkle.innerHTML = '✨';
-                sparkle.style.color = colors[Math.floor(Math.random() * colors.length)];
-                sparkle.style.fontSize = (Math.random() * 10 + 15) + 'px';
-                
-                document.body.appendChild(sparkle);
-                
-                setTimeout(() => {
-                    sparkle.style.transform = `translate(${x}px, ${y}px) scale(2) rotate(180deg)`;
-                }, 10);
-                
-                setTimeout(() => sparkle.remove(), 800);
-            }
-        }
-
-        // Add smooth scroll behavior
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && href.startsWith('#')) {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-            });
-        });
-
-        // Add entrance animations on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards
-        document.querySelectorAll('.division-card, .project-card, .mv-card').forEach(card => {
-            observer.observe(card);
-        });
-    </script>
 </body>
 </html>
