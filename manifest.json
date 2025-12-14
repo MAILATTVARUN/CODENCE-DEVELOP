@@ -1,0 +1,17 @@
+{
+    "name": "CODENCE DEVELOP",
+    "short_name": "CODENCE",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#050505",
+    "theme_color": "#050505",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "assets/logo.svg",
+            "type": "image/svg+xml",
+            "sizes": "48x48 72x72 96x96 128x128 192x192 256x256 512x512",
+            "purpose": "any maskable"
+        }
+    ]
+}
