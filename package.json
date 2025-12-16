@@ -1,0 +1,13 @@
+{
+  "name": "codence-develop",
+  "version": "1.0.0",
+  "description": "CODENCE DEVELOP - The Future-Building Group",
+  "scripts": {
+    "dev": "npx vite",
+    "build": "echo 'Static site - no build needed'",
+    "preview": "npx vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
