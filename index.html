@@ -779,6 +779,461 @@
                 max-width: 1300px;
             }
         }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            }
+        }
+
+        @keyframes rotateIn {
+            from {
+                opacity: 0;
+                transform: rotate(-10deg) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0) scale(1);
+            }
+        }
+
+        h2 {
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .division-card, .project-card, .mv-card, .opportunity-card, .team-card {
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .division-card:nth-child(1), .project-card:nth-child(1), .opportunity-card:nth-child(1), .team-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .division-card:nth-child(2), .project-card:nth-child(2), .opportunity-card:nth-child(2), .team-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .division-card:nth-child(3), .project-card:nth-child(3), .opportunity-card:nth-child(3), .team-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .division-card:nth-child(n+4), .project-card:nth-child(n+4), .opportunity-card:nth-child(n+4) {
+            animation-delay: 0.4s;
+        }
+
+        .hero h2 {
+            animation: slideInDown 0.7s ease-out;
+        }
+
+        .hero p {
+            animation: fadeInUp 0.7s ease-out 0.2s backwards;
+        }
+
+        .cta-button {
+            animation: bounceIn 0.8s ease-out 0.4s backwards;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Games Section */
+        .games-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .games-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .balloons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+            justify-items: center;
+        }
+
+        .balloon {
+            position: relative;
+            width: 140px;
+            height: 160px;
+            cursor: pointer;
+            animation: float 3s ease-in-out infinite;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .balloon:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+
+        .balloon-body {
+            width: 100%;
+            height: 120px;
+            border-radius: 50% 50% 50% 45%;
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .balloon-body::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent);
+            border-radius: 50% 50% 50% 45%;
+        }
+
+        .balloon-string {
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .balloon:nth-child(1) .balloon-body {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .balloon:nth-child(2) .balloon-body {
+            background: linear-gradient(135deg, #4ecdc4 0%, #44b3aa 100%);
+            animation: float 3.5s ease-in-out infinite 0.5s;
+        }
+
+        .balloon:nth-child(3) .balloon-body {
+            background: linear-gradient(135deg, #ffd93d 0%, #ffca3d 100%);
+            animation: float 4.5s ease-in-out infinite 1s;
+        }
+
+        .balloon:nth-child(4) .balloon-body {
+            background: linear-gradient(135deg, #a8e6cf 0%, #56ab91 100%);
+            animation: float 3.8s ease-in-out infinite 0.3s;
+        }
+
+        .balloon-body:active {
+            transform: scale(0.95);
+        }
+
+        .balloon-body:hover {
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Game Modals */
+        .game-modal {
+            display: none;
+            position: fixed;
+            z-index: 10001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            overflow-y: auto;
+        }
+
+        .game-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .game-content {
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            padding: 40px;
+            max-width: 700px;
+            width: 90%;
+            border-radius: 12px;
+            position: relative;
+            border: 2px solid #444;
+            animation: modalSlideIn 0.3s ease-out;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-game-modal {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 32px;
+            color: #fff;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color 0.2s;
+        }
+
+        .close-game-modal:hover {
+            color: #ff6b6b;
+        }
+
+        .game-content h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .sudoku-grid {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            gap: 0;
+            margin-bottom: 20px;
+            border: 3px solid #fff;
+        }
+
+        .sudoku-cell {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #666;
+            background: #1a1a1a;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .sudoku-cell:hover {
+            background: #333;
+        }
+
+        .sudoku-cell:nth-child(3n)  {
+            border-right: 3px solid #fff;
+        }
+
+        .sudoku-cell:nth-child(27n) ~ .sudoku-cell:nth-child(-n+3),
+        .sudoku-cell:nth-child(54n) ~ .sudoku-cell:nth-child(-n+3) {
+            border-bottom: 3px solid #fff;
+        }
+
+        .game-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .game-btn {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .game-btn:hover {
+            background: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        .game-info {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4ecdc4;
+            color: #b0b0b0;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .cricket-moves {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .move-btn {
+            background: #2d2d2d;
+            border: 2px solid #444;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .move-btn:hover {
+            border-color: #fff;
+            background: #333;
+            transform: scale(1.05);
+        }
+
+        .move-btn:active {
+            transform: scale(0.95);
+        }
+
+        .cricket-result {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 8px;
+            color: #fff;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #444;
+        }
+
+        .number-guess-input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #444;
+            border-radius: 6px;
+            background: #1a1a1a;
+            color: #fff;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+
+        .number-guess-input:focus {
+            outline: none;
+            border-color: #4ecdc4;
+        }
+
+        .guess-info {
+            background: #2d2d2d;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #fff;
+            font-weight: 600;
+            min-height: 30px;
+        }
+
+        .guess-message {
+            font-size: 14px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -794,6 +1249,7 @@
                     <a href="#home">Home</a>
                     <a href="#divisions">Divisions</a>
                     <a href="#projects">Projects</a>
+                    <a href="#games">Games</a>
                     <a href="#" onclick="openWorkModal(event)">Work With Us</a>
                     <a href="#about">About</a>
                     <a href="#contact">Contact</a>
@@ -1076,6 +1532,29 @@
         </div>
     </section>
 
+    <section id="games" class="games-section">
+        <div class="container">
+            <div class="games-container">
+                <h2>Play Fun Games</h2>
+                <p style="text-align: center; color: #b0b0b0; margin-bottom: 30px; font-size: 16px;">Click on any balloon to play exciting games!</p>
+                <div class="balloons-grid">
+                    <div class="balloon" onclick="openGameModal('sudoku')">
+                        <div class="balloon-body">🎮</div>
+                        <div class="balloon-string"></div>
+                    </div>
+                    <div class="balloon" onclick="openGameModal('cricket')">
+                        <div class="balloon-body">🏏</div>
+                        <div class="balloon-string"></div>
+                    </div>
+                    <div class="balloon" onclick="openGameModal('number')">
+                        <div class="balloon-body">🎯</div>
+                        <div class="balloon-string"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
         <div class="container">
             <h2>Contact Us</h2>
@@ -1096,6 +1575,65 @@
             </div>
         </div>
     </section>
+
+    <!-- Sudoku Game Modal -->
+    <div id="sudokuModal" class="game-modal">
+        <div class="game-content">
+            <button class="close-game-modal" onclick="closeGameModal('sudoku')">&times;</button>
+            <h3>🎮 Sudoku Solver</h3>
+            <div class="game-info">
+                <p>Can you solve this Sudoku puzzle? Fill in numbers 1-9 so that each row, column, and 3x3 box contains all digits.</p>
+            </div>
+            <div id="sudokuGrid" class="sudoku-grid"></div>
+            <div class="game-controls">
+                <button class="game-btn" onclick="resetSudoku()">Reset</button>
+                <button class="game-btn" onclick="generateSudoku()">New Game</button>
+            </div>
+            <div id="sudokuStatus" class="game-info" style="border-left-color: #ff6b6b; display: none;"></div>
+        </div>
+    </div>
+
+    <!-- Hand Cricket Game Modal -->
+    <div id="cricketModal" class="game-modal">
+        <div class="game-content">
+            <button class="close-game-modal" onclick="closeGameModal('cricket')">&times;</button>
+            <h3>🏏 Hand Cricket</h3>
+            <div class="game-info">
+                <p>Choose a number of fingers. The computer will choose too. Match = You're Out! Get 30+ to win!</p>
+            </div>
+            <div class="cricket-result" id="cricketResult">Choose your fingers to start</div>
+            <div class="cricket-moves">
+                <button class="move-btn" onclick="playHandCricket(1)">1 ☝️</button>
+                <button class="move-btn" onclick="playHandCricket(2)">2 ✌️</button>
+                <button class="move-btn" onclick="playHandCricket(3)">3 🤟</button>
+                <button class="move-btn" onclick="playHandCricket(4)">4 🖐️</button>
+                <button class="move-btn" onclick="playHandCricket(5)">5 ✋</button>
+                <button class="move-btn" onclick="playHandCricket(0)">0 ✊</button>
+            </div>
+            <div id="cricketScore" class="game-info" style="border-left-color: #4ecdc4;">Player Score: 0 | Computer Score: 0</div>
+            <div class="game-controls">
+                <button class="game-btn" onclick="resetHandCricket()">New Game</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Number Guessing Game Modal -->
+    <div id="numberModal" class="game-modal">
+        <div class="game-content">
+            <button class="close-game-modal" onclick="closeGameModal('number')">&times;</button>
+            <h3>🎯 Guess the Number</h3>
+            <div class="game-info">
+                <p>I'm thinking of a number between 1 and 100. Can you guess it?</p>
+            </div>
+            <input type="number" id="numberGuess" class="number-guess-input" placeholder="Enter your guess..." min="1" max="100">
+            <button class="game-btn" style="width: 100%; margin-bottom: 15px;" onclick="submitNumberGuess()">Submit Guess</button>
+            <div class="guess-info" id="guessMessage">Enter a number and guess!</div>
+            <div id="guessList" class="guess-info" style="font-size: 12px;">Guesses: </div>
+            <div class="game-controls">
+                <button class="game-btn" onclick="resetNumberGame()">New Game</button>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
@@ -1133,6 +1671,187 @@
         document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') {
                 closeWorkModal();
+            }
+        });
+
+        let sudokuBoard = [];
+        let sudokuOriginal = [];
+        let cricketPlayerScore = 0;
+        let cricketComputerScore = 0;
+        let numberSecret = 0;
+        let numberGuesses = [];
+        let numberAttempts = 0;
+
+        function openGameModal(game) {
+            if (game === 'sudoku') {
+                document.getElementById('sudokuModal').classList.add('active');
+                if (sudokuBoard.length === 0) generateSudoku();
+            } else if (game === 'cricket') {
+                document.getElementById('cricketModal').classList.add('active');
+            } else if (game === 'number') {
+                document.getElementById('numberModal').classList.add('active');
+                if (numberSecret === 0) resetNumberGame();
+            }
+        }
+
+        function closeGameModal(game) {
+            if (game === 'sudoku') {
+                document.getElementById('sudokuModal').classList.remove('active');
+            } else if (game === 'cricket') {
+                document.getElementById('cricketModal').classList.remove('active');
+            } else if (game === 'number') {
+                document.getElementById('numberModal').classList.remove('active');
+            }
+        }
+
+        window.onclick = function (event) {
+            const workModal = document.getElementById('workModal');
+            const sudokuModal = document.getElementById('sudokuModal');
+            const cricketModal = document.getElementById('cricketModal');
+            const numberModal = document.getElementById('numberModal');
+
+            if (event.target === workModal) closeWorkModal();
+            if (event.target === sudokuModal) closeGameModal('sudoku');
+            if (event.target === cricketModal) closeGameModal('cricket');
+            if (event.target === numberModal) closeGameModal('number');
+        };
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeWorkModal();
+                closeGameModal('sudoku');
+                closeGameModal('cricket');
+                closeGameModal('number');
+            }
+        });
+
+        function generateSudoku() {
+            const emptySudoku = [
+                [5, 3, 0, 0, 7, 0, 0, 0, 0],
+                [6, 0, 0, 1, 9, 5, 0, 0, 0],
+                [0, 9, 8, 0, 0, 0, 0, 6, 0],
+                [8, 0, 0, 0, 6, 0, 0, 0, 3],
+                [4, 0, 0, 8, 0, 3, 0, 0, 1],
+                [7, 0, 0, 0, 2, 0, 0, 0, 6],
+                [0, 6, 0, 0, 0, 0, 2, 8, 0],
+                [0, 0, 0, 4, 1, 9, 0, 0, 5],
+                [0, 0, 0, 0, 8, 0, 0, 7, 9]
+            ];
+            sudokuBoard = JSON.parse(JSON.stringify(emptySudoku));
+            sudokuOriginal = JSON.parse(JSON.stringify(emptySudoku));
+            renderSudoku();
+        }
+
+        function renderSudoku() {
+            const grid = document.getElementById('sudokuGrid');
+            grid.innerHTML = '';
+            for (let i = 0; i < 81; i++) {
+                const row = Math.floor(i / 9);
+                const col = i % 9;
+                const cell = document.createElement('input');
+                cell.type = 'text';
+                cell.className = 'sudoku-cell';
+                cell.maxLength = '1';
+                cell.id = `cell-${i}`;
+                if (sudokuOriginal[row][col] !== 0) {
+                    cell.value = sudokuOriginal[row][col];
+                    cell.disabled = true;
+                    cell.style.opacity = '0.6';
+                } else if (sudokuBoard[row][col] !== 0) {
+                    cell.value = sudokuBoard[row][col];
+                }
+                cell.addEventListener('input', function() {
+                    if (this.value && !/[1-9]/.test(this.value)) {
+                        this.value = '';
+                    }
+                    if (this.value) {
+                        sudokuBoard[row][col] = parseInt(this.value);
+                    } else {
+                        sudokuBoard[row][col] = 0;
+                    }
+                });
+                grid.appendChild(cell);
+            }
+        }
+
+        function resetSudoku() {
+            sudokuBoard = JSON.parse(JSON.stringify(sudokuOriginal));
+            renderSudoku();
+            document.getElementById('sudokuStatus').style.display = 'none';
+        }
+
+        function playHandCricket(fingers) {
+            const computerChoice = Math.floor(Math.random() * 6);
+            const match = fingers === computerChoice;
+
+            if (match) {
+                document.getElementById('cricketResult').textContent = `You chose ${fingers} fingers, Computer chose ${computerChoice}. You're OUT!`;
+                document.getElementById('cricketResult').style.color = '#ff6b6b';
+            } else {
+                cricketPlayerScore += fingers;
+                document.getElementById('cricketResult').textContent = `You chose ${fingers} fingers, Computer chose ${computerChoice}. You scored ${fingers}!`;
+                document.getElementById('cricketResult').style.color = '#4ecdc4';
+            }
+
+            document.getElementById('cricketScore').textContent = `Player Score: ${cricketPlayerScore} | Computer Score: ${cricketComputerScore}`;
+
+            if (cricketPlayerScore >= 30) {
+                document.getElementById('cricketResult').textContent = '🎉 You Won! You scored 30+!';
+                document.getElementById('cricketResult').style.color = '#a8e6cf';
+            }
+        }
+
+        function resetHandCricket() {
+            cricketPlayerScore = 0;
+            cricketComputerScore = 0;
+            document.getElementById('cricketResult').textContent = 'Choose your fingers to start';
+            document.getElementById('cricketResult').style.color = '#fff';
+            document.getElementById('cricketScore').textContent = `Player Score: 0 | Computer Score: 0`;
+        }
+
+        function resetNumberGame() {
+            numberSecret = Math.floor(Math.random() * 100) + 1;
+            numberGuesses = [];
+            numberAttempts = 0;
+            document.getElementById('numberGuess').value = '';
+            document.getElementById('guessMessage').textContent = 'Enter a number and guess!';
+            document.getElementById('guessMessage').style.color = '#fff';
+            document.getElementById('guessList').textContent = 'Guesses: ';
+        }
+
+        function submitNumberGuess() {
+            const guess = parseInt(document.getElementById('numberGuess').value);
+            if (!guess || guess < 1 || guess > 100) {
+                document.getElementById('guessMessage').textContent = 'Please enter a number between 1 and 100!';
+                document.getElementById('guessMessage').style.color = '#ff6b6b';
+                return;
+            }
+
+            numberAttempts++;
+            numberGuesses.push(guess);
+            document.getElementById('guessList').textContent = 'Guesses: ' + numberGuesses.join(', ');
+
+            if (guess === numberSecret) {
+                document.getElementById('guessMessage').textContent = `🎉 Correct! You found it in ${numberAttempts} attempts!`;
+                document.getElementById('guessMessage').style.color = '#a8e6cf';
+                document.getElementById('numberGuess').disabled = true;
+            } else if (guess < numberSecret) {
+                document.getElementById('guessMessage').textContent = '📈 Too Low! Try a higher number.';
+                document.getElementById('guessMessage').style.color = '#ffd93d';
+            } else {
+                document.getElementById('guessMessage').textContent = '📉 Too High! Try a lower number.';
+                document.getElementById('guessMessage').style.color = '#ffd93d';
+            }
+
+            document.getElementById('numberGuess').value = '';
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                const numberModal = document.getElementById('numberModal');
+                if (numberModal.classList.contains('active')) {
+                    submitNumberGuess();
+                }
             }
         });
     </script>
